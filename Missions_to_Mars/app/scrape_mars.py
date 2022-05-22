@@ -2,6 +2,7 @@
 import pandas as pd
 from splinter import Browser
 import time
+import datetime as dt
 from bs4 import BeautifulSoup as bs
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -44,6 +45,7 @@ def scrape():
     #df
     # convert the data to a HTML table string
     html_table = df.to_html()
+    print(html_table)
     # Visit the marshemispheres site to obtain high-resolution images for each hemisphere of Mars.
     url3 = 'https://marshemispheres.com/'
     browser.visit(url3)
@@ -68,7 +70,7 @@ def scrape():
             abs_url_list.append(abs_url)
 
     #print url list to check
-    #print(abs_url_list)
+    print(abs_url_list)
     #print(rel_url_list)
     for link in abs_url_list:
         url = link
@@ -94,19 +96,22 @@ def scrape():
             #append dictionary to list of dictionaries
             hemisphere_image_urls.append(title_img_dict)
     #check list of dictionaries
-    #print(hemisphere_image_urls)            
+    print(hemisphere_image_urls)            
     #close the splinter browser
     browser.quit()
+    
+    last_modified = dt.datetime.now()
 
-    scrape_data = {
+    scrape_mars = {
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
         "table": html_table,
-        "image_urls": hemisphere_image_urls
+        "image_urls": hemisphere_image_urls,
+        "last modified": last_modified
     }
 
-    return(scrape_data)
+    return(scrape_mars)
   
 
 

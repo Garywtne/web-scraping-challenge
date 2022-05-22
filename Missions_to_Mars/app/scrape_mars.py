@@ -45,7 +45,7 @@ def scrape():
     #df
     # convert the data to a HTML table string
     html_table = df.to_html()
-    print(html_table)
+    # print(html_table)
     # Visit the marshemispheres site to obtain high-resolution images for each hemisphere of Mars.
     url3 = 'https://marshemispheres.com/'
     browser.visit(url3)
@@ -69,9 +69,9 @@ def scrape():
             #append url to list
             abs_url_list.append(abs_url)
 
-    #print url list to check
-    print(abs_url_list)
-    #print(rel_url_list)
+    # print url list to check
+    # print(abs_url_list)
+    # print(rel_url_list)
     for link in abs_url_list:
         url = link
         browser.visit(url)
@@ -96,7 +96,7 @@ def scrape():
             #append dictionary to list of dictionaries
             hemisphere_image_urls.append(title_img_dict)
     #check list of dictionaries
-    print(hemisphere_image_urls)            
+    # print(hemisphere_image_urls)            
     #close the splinter browser
     browser.quit()
     
@@ -113,6 +113,10 @@ def scrape():
 
     return(scrape_mars)
   
+if __name__ == "__main__":
+
+   
+    print(scrape())
 
 
 

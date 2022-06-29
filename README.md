@@ -1,17 +1,18 @@
-### Summary
+# Summary
 
-Web scraping demonstration using PyMongo and Beautiful Soup to scrape a website and store the data in a Mongo database.
+Scraping a website and storing data in a Mongo database using PyMongo and Beautiful Soup.
 
-Then I used Flask and Bootstrap to render a webpage which pulled the stored scraped results from the Mongo Database to create a HTML page with the retrieved data.
+Flask and Bootstrap were used to render a webpage with results pulled from the Mongo Database, creating an HTML page.
 
-### Scrape Source
+## Data Source
 Data was scraped from https://redplanetscience.com/ and https://spaceimages-mars.com/
 
-### Working Scrape Screenshots
-Below is the result of clicking the scrape button. You can see the content successfully changes based on the dynamic content that changed on the original pages that were scraped.
+## Screenshots
 
-##### Before Clicking Scrape Button
-<img src="Images/scrape-1.png" width="600">
+### Clicking the Scrape Data Button refreshes the News and Images
 
-##### After Clicking Scrape Button
-<img src="Images/scrape-2.png" width="600">
+
+![Mission_to_Mars_1](https://user-images.githubusercontent.com/85430216/176547539-6e114b51-1198-49f9-8420-1a3c8060d17d.PNG)
+
+
+![Mission_to_Mars_2](https://user-images.githubusercontent.com/85430216/176547543-d0f3690e-a38c-4e05-b723-2dd6405eed90.PNG)

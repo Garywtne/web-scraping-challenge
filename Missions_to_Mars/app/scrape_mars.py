@@ -108,14 +108,14 @@ def scrape():
         "featured_image_url": featured_image_url,
         "table": html_table,
         "image_urls": hemisphere_image_urls,
-        "last modified": last_modified
+        "last_modified": last_modified
     }
 
     return(scrape_mars)
   
 if __name__ == "__main__":
 
-   
+
     print(scrape())
 
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mission to Mars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <style>
+    img {
+      height: 200px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data</a></p>
+      </div>
+
+      <!-- Add Mars News -->
+      <div class="row" id="mars-news">
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-body">
+              <h2>Latest News from Mars</h2>
+              <h4 class="media-heading">{{ mars.news_title }}</h4>
+              <p>{{ mars.news_p}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add the featured image and fact comparison table -->
+      <div class="row" id="mars-featured-image">
+        <div class="col-md-8">
+          <h2>Latest Image from Mars</h2>
+
+          <img
+            src="{{mars.featured_image_url}}"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+
+        <div class="col-md-4">
+          <!-- Mars Vs Earth -->
+          <div class="row" id="mars-facts">
+            <h4>Compare facts between Mars and Earth</h4>
+            {{ mars.table | safe }}
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row" id="mars-hemispheres">
+        <div class="page_header">
+          <h2 class="text_centre">Mars Hemispheres</h2>
+        </div>
+      </div>
+     
+      <div class="container">
+        <div class="row row-cols-auto">
+          {% for m in mars.image_urls %}
+          <div class="col">
+            <img
+            src="{{m.img_url}}"
+            class="img-responsive"
+            alt="Responsive image"/> 
+          </div>
+          {% endfor %}
+        </div>
+     </div>
+
+
+
+  </div>
+      
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

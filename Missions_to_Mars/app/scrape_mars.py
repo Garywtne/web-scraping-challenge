@@ -97,10 +97,15 @@ def scrape():
             hemisphere_image_urls.append(title_img_dict)
     #check list of dictionaries
     # print(hemisphere_image_urls)            
+    
+    # get current date/time
+    last_modified = dt.datetime.now()
+    #print(last_modified)
+
     #close the splinter browser
     browser.quit()
     
-    last_modified = dt.datetime.now()
+    
 
     scrape_mars = {
         "news_title": news_title,
